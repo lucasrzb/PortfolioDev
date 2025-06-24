@@ -1,0 +1,179 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        /* Estilos da navbar */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            transition: transform 0.3s ease-in-out;
+            
+            backdrop-filter: blur(10px); /* Efeito de desfoque */
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        
+        /* Navbar escondida */
+        .hide-nav {
+            transform: translateY(-100%);
+        }
+        
+        /* Navbar visível */
+        .show-nav {
+            transform: translateY(0);
+        }
+        
+        /* Espaço para conteúdo */
+        main {
+            padding-top: 120px; /* Deve ser maior que a altura da navbar */
+            min-height: 150vh; /* Para permitir rolagem */
+         /* Menu mobile - começa escondido */
+         }
+        .mobile-nav {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        
+        .mobile-nav.open {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+        
+        main {
+            padding-top: 60px;
+            min-height: 200vh;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff;
+            color: white;
+        }
+        
+        .text-secondary {
+            color: #00f0ff;
+        }
+        
+        .hover\:neon:hover {
+            text-shadow: 0 0 8px #00f0ff, 0 0 16px #00f0ff;
+        }
+        
+        :root {
+            --primary: #00f0ff;
+            --secondary: #ff00f0;
+            --dark: #0a0a1a;
+            --light: #f0f0ff;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -3;
+        }
+        
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.9) 0%, rgba(10, 10, 26, 0.7) 100%);
+            z-index: -2;
+        }
+        
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .fallback-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #0a0a1a, #1a0a2a, #0a1a2a, #1a2a0a);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            z-index: -4;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary), 0 0 15px var(--primary);
+        }
+        
+        .neon-box {
+            box-shadow: 0 0 10px var(--primary), 0 0 20px rgba(0, 240, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .neon-box:hover {
+            box-shadow: 0 0 15px var(--primary), 0 0 30px rgba(0, 240, 255, 0.5);
+            transform: translateY(-5px);
+        }
+        
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+        
+        .card-3d:hover {
+            transform: rotateY(180deg);
+        }
+        
+        .card-front, .card-back {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .card-back {
+            transform: rotateY(180deg);
+        }
+        
+        .typing-effect {
+            border-right: 2px solid var(--primary);
+            animation: blink 0.75s step-end infinite;
+        }
+        
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary) }
+        }
+        
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 5px var(--primary); }
+            to { box-shadow: 0 0 20px var(--primary), 0 0 30px var(--secondary); }
+        }
+        #pc {
+            transform: translateY(-30px);
+        }
